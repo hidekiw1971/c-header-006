@@ -1,0 +1,196 @@
+@use "global" as *;
+
+.header {
+    position: fixed;
+    background: rgba(219, 215, 97, 1);
+    display: flex;
+    width: 100%;
+    height: rem(50);
+    z-index: 10;
+
+    @include mq(md) {
+        // 
+    }
+}
+
+.header_layout {
+    padding: 0 rem(20);
+
+    @include mq(md) {
+        // 
+    }
+}
+
+.header>a {
+    display: inline-block;
+    width: rem(150);
+    height: 100%;
+}
+
+.header>a>figure {
+    display: flex;
+    align-items: center;
+    height: inherit;
+
+    @include mq(md) {
+        // 
+    }
+}
+
+// js-drawer-button
+.header>.js-drawer-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    width: rem(50);
+    height: rem(50);
+    background: rgba(208, 242, 94, 1);
+
+    @include mq(md) {
+        display: none;
+    }
+}
+
+.header>.js-drawer-button>span {
+    display: block;
+    width: 90%;
+    height: rem(4);
+    background: rgba(51, 51, 51, 1);
+    position: relative;
+    transition: 0.2s;
+
+}
+
+.header>.js-drawer-button>span::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: rem(4);
+    background: rgba(51, 51, 51, 1);
+    position: absolute;
+    top: rem(-12);
+    transition: 0.3s;
+
+}
+
+.header>.js-drawer-button>span::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: rem(4);
+    background: rgba(51, 51, 51, 1);
+    position: absolute;
+    top: rem(12);
+    transition: 0.3s;
+
+}
+
+// js-drawer-button-open時の動作設定
+.header>.js-drawer-button-open>span::before {
+    top: 0;
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.header>.js-drawer-button-open>span::after {
+    top: 0;
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+
+.header>.js-drawer-button-open>span {
+    background: rgba(51, 51, 51, 0);
+}
+
+// global-manu
+.header>.global-menu {
+    display: none;
+
+    @include mq(md) {
+        display: flex;
+        height: 100%;
+        background: rgba(65, 105, 225, 1);
+        margin-left: auto;
+    }
+}
+
+.header>.global-menu>a {
+
+    @include mq(md) {
+        height: inherit;
+        padding: 0 rem(20);
+    }
+}
+
+.header>.global-menu>a>li {
+
+    @include mq(md) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        white-space: nowrap;
+    }
+}
+
+.header>.global-menu>a:not(:last-child) {
+
+    @include mq(md) {
+        margin-right: rem(10);
+    }
+}
+
+// mobile時のグローバルメニュー（.js-drawer-menu）
+.js-drawer-menu {
+    width: 100%;
+    height: 0;
+    text-align: center;
+    background: rgba(242, 222, 94, 1);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+
+    @include mq(md) {
+        //
+    }
+}
+
+.js-drawer-menu>a>li {
+    padding: rem(10) 0;
+    display: none; // kensho1
+
+    @include mq(md) {
+        // 
+    }
+}
+
+.js-drawer-menu>a:not(:last-child) {
+    display: block;
+    margin-bottom: rem(15);
+
+    @include mq(md) {
+        // 
+    }
+}
+
+// js-drawer-buttonクリック時動作設定
+.js-drawer-menu-open {
+    display: block;
+    height: 100%;
+    padding: rem(70) 0;
+
+    @include mq(md) {
+        // 
+    }
+}
+
+.js-drawer-menu>a>.open {
+    display: block; // kensho1
+
+    @include mq(md) {
+        // 
+    }
+}

@@ -1,0 +1,354 @@
+@charset "UTF-8";
+body {
+  font-family: "";
+}
+
+.u-desktop {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .u-desktop {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .u-mobile {
+    display: none;
+  }
+}
+
+/* リキッドレイアウト対応 */
+html {
+  font-size: 16px;
+}
+@media (max-width: 375px) {
+  html {
+    font-size: 4.2666666667vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 1.4545454545vw;
+  }
+}
+@media (min-width: 1100px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* pcの電話番号発信対応 */
+@media screen and (min-width: 768px) {
+  a[href^="tel:"] {
+    pointer-events: none;
+  }
+}
+
+/* ホバー */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul,
+ol {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="10" /></filter></svg>#filter');
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+/* フォームリセット */
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: none;
+}
+
+input[type=submit],
+input[type=button],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.header {
+  position: fixed;
+  background: rgb(219, 215, 97);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  height: 3.125rem;
+  z-index: 10;
+}
+.header_layout {
+  padding: 0 20px;
+  padding: 0 1.25rem;
+}
+.header > a {
+  display: inline-block;
+  width: 150px;
+  width: 9.375rem;
+  height: 100%;
+}
+
+.header > a > figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
+}
+.header > .js-drawer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+  width: 50px;
+  width: 3.125rem;
+  height: 50px;
+  height: 3.125rem;
+  background: rgb(208, 242, 94);
+}
+@media screen and (min-width: 768px) {
+  .header > .js-drawer-button {
+    display: none;
+  }
+}
+
+.header > .js-drawer-button > span {
+  display: block;
+  width: 90%;
+  height: 4px;
+  height: 0.25rem;
+  background: rgb(51, 51, 51);
+  position: relative;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.header > .js-drawer-button > span::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  height: 0.25rem;
+  background: rgb(51, 51, 51);
+  position: absolute;
+  top: -12px;
+  top: -0.75rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header > .js-drawer-button > span::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  height: 0.25rem;
+  background: rgb(51, 51, 51);
+  position: absolute;
+  top: 12px;
+  top: 0.75rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header > .js-drawer-button-open > span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.header > .js-drawer-button-open > span::after {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.header > .js-drawer-button-open > span {
+  background: rgba(51, 51, 51, 0);
+}
+
+.header > .global-menu {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header > .global-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    background: rgb(65, 105, 225);
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header > .global-menu > a {
+    height: inherit;
+    padding: 0 1.25rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header > .global-menu > a > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: inherit;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header > .global-menu > a:not(:last-child) {
+    margin-right: 0.625rem;
+  }
+}
+
+.js-drawer-menu {
+  width: 100%;
+  height: 0;
+  text-align: center;
+  background: rgb(242, 222, 94);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.js-drawer-menu > a > li {
+  padding: 10px 0;
+  padding: 0.625rem 0;
+  display: none;
+}
+.js-drawer-menu > a:not(:last-child) {
+  display: block;
+  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
+}
+.js-drawer-menu-open {
+  display: block;
+  height: 100%;
+  padding: 70px 0;
+  padding: 4.375rem 0;
+}
+.js-drawer-menu > a > .open {
+  display: block;
+}
+/*# sourceMappingURL=styles.css.map */
