@@ -1,4 +1,5 @@
-画像をコピペ
+<img width="1326" alt="image" src="https://user-images.githubusercontent.com/99580997/222843231-91e46831-75d4-41c5-b385-6026cf9df50b.png">
+<img width="508" alt="image" src="https://user-images.githubusercontent.com/99580997/222843378-4f5d0b62-bf40-4021-bafa-f64d7bf8bc9b.png">
 
 # compornent（共通部品）
 - ヘッダー（レスポンシブ対応。✖️ボタン、メニュー展開、'header'の高さを'height'で確保したパターン。）
